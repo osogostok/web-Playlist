@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist Music</title>
+    <link rel="stylesheet" href="{% static 'audio_files/css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'audio_files/css/style.css' %}" />
+    <link rel="icon" href="../../static/audio_files/img/palm.ico" type="image/x-icon">
+    
+    <style>
+        body {
+            background-image: url('{% static 'audio_files/img/back.jpg' %}');
+            background-size: cover;
+            background-position: no-repeat;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const errorMessage = document.getElementById('error-message');
+            if (errorMessage.innerHTML.trim() !== '') {
+                errorMessage.style.display = 'block';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="playlist">
+            <h1 class="pink">Playlist</h1>
+            <h2>Music</h2>
+            <div>
+                {% if audio_file_list %}
+                    <ul>
+                        {% for audio in audio_file_list %}
+                            <div class="audio-block">
+                              <p>{{ audio.name_file }}</p>
+                              <audio controls>
+                                  <source src="media/{{ audio.name_file }}" type="{{ audio.content_type }}">
+                              </audio>
+                          </div>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No files</p>
+                {% endif %}
+            </div>
+            <br>
+            {% if messages %}
+                <div id="error-message" class="error-message">
+                    {% for message in messages %}
+                        &#127796;{{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="audioFiles" id="file" class="inputfile"/>
+                <label for="file">Choose file</label>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

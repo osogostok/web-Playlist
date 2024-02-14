@@ -1,0 +1,17 @@
+# Чтобы погрузиться в виртуальное окружение, выполните следующие шаги:
+# 1. Создайте виртуальное окружение:
+#     python -m venv myenv
+# 2. Активируйте виртуальное окружение:
+#     source myenv/bin/activate (для Unix/Mac)
+#     myenv\Scripts\activate (для Windows)
+# 3. Установите необходимые библиотеки:
+#     pip install -r requirements.txt
+# После установки всех необходимых библиотек, всё готово к работе!
+# Для выхода из виртуального окружения выполните команду:
+#     deactivate
+
+
+urllib.parse
+wsgiref.simple_server 
+time
+random

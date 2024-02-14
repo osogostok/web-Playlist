@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.pink {
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff,
+    0 0 40px #fb76fb, 0 0 80px #fb76fb, 0 0 90px #fb76fb, 0 0 100px #fb76fb,
+    0 0 150px #fb76fb;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 10px 10px;
+  transition: 0.2s;
+  margin-right: 100px;
+  box-shadow: 0 0 10px #fff;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 150px;
+  text-align: center;
+
+}
+
+button:hover {
+  background: rgba(243, 171, 243, 0.5);
+  color: #fff;
+  box-shadow: 0 0 2em 0.5em #a483d2;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  color: white;
+  background-color: black;
+  display: inline-block;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 10px 10px;
+  transition: 0.2s;
+  margin-right: 100px;
+  box-shadow: 0 0 10px #fff;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background: rgba(243, 171, 243, 0.5);
+  color: #fff;
+  box-shadow: 0 0 2em 0.5em #a483d2;
+}
+
+p {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  font-size: 20pt;
+}
+
+
+audio {
+  width: 95%;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(17, 62, 16, 0.416);
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: rgba(17, 62, 16, 0);
+  color: #fff;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background: #034a1c;
+  border-radius: 10px;
+}
+
+audio::-webkit-media-controls-timeline {
+  background-color: rgba(17, 62, 16, 0);
+}
+
+
+.audio-block {
+  background: rgba(243, 171, 243, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  width: 450px;
+}
+
+.audio-block p {
+  margin: 0;
+  font-size: 18px; 
+  word-wrap: break-word;
+}
+
+.audio-block audio {
+  font-size: 14px;
+}
+
+.error-message {
+  display: none; 
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(243, 171, 243, 0.5);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 2em 0.5em #a483d2;
+}
+
